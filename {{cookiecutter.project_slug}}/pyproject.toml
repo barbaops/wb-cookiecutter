@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "wb-cookiecutter"
+version = "0.1.0"
+description = ""
+authors = ["chwiee"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.111.0"
+uvicorn = "^0.29.0"
+
+{% if cookiecutter.use_database == 'y' %}
+sqlalchemy = "^2.0.30"
+psycopg2-binary = "^2.9.9"
+alembic = "^1.13.1"
+{% endif %}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
